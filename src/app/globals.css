@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@layer base {
+  :root,
+  [data-theme="red-black-white"] {
+    --bg-main: #000000;
+    --bg-secondary: #0A0A0A;
+    --bg-sidebar: #050505;
+    --bg-card: #111111;
+    --bg-card-hover: #1A1A1A;
+    --accent-primary: #FF1A2A;
+    --accent-secondary: #FFFFFF;
+    --color-success: #32D583;
+    --color-warning: #FFA500;
+    --color-critical: #FF1A2A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #D4D4D8;
+    --text-muted: #888888;
+    --border-color: #262626;
+    --border-color-glow: rgba(255, 26, 42, 0.55);
+    --canvas-bg: #000000;
+    --node-bg: #111111;
+    --node-border: #2B2B2B;
+    --node-text: #FFFFFF;
+  }
+
+  [data-theme="cyber-dark"] {
+    --bg-main: #070913;
+    --bg-secondary: #0E1322;
+    --bg-sidebar: #090E1A;
+    --bg-card: #131A2B;
+    --bg-card-hover: #1A243B;
+    --accent-primary: #7C5CFF;
+    --accent-secondary: #00D9FF;
+    --color-success: #32D583;
+    --color-warning: #FFB547;
+    --color-critical: #FF4D6D;
+    --text-primary: #F4F7FB;
+    --text-secondary: #9BA8BC;
+    --text-muted: #627189;
+    --border-color: #243048;
+    --border-color-glow: rgba(124, 92, 255, 0.45);
+    --canvas-bg: #070913;
+    --node-bg: #131A2B;
+    --node-border: #243048;
+    --node-text: #F4F7FB;
+  }
+
+  [data-theme="matrix-neon"] {
+    --bg-main: #040c08;
+    --bg-secondary: #08170f;
+    --bg-sidebar: #05100a;
+    --bg-card: #092015;
+    --bg-card-hover: #0e2e1f;
+    --accent-primary: #00FF88;
+    --accent-secondary: #39FF14;
+    --color-success: #00FF88;
+    --color-warning: #FFD600;
+    --color-critical: #FF3B30;
+    --text-primary: #E0FFE8;
+    --text-secondary: #7AC794;
+    --text-muted: #437A55;
+    --border-color: #124029;
+    --border-color-glow: rgba(0, 255, 136, 0.45);
+    --canvas-bg: #030805;
+    --node-bg: #092015;
+    --node-border: #124029;
+    --node-text: #E0FFE8;
+  }
+
+  [data-theme="oceanic-cyan"] {
+    --bg-main: #020b17;
+    --bg-secondary: #05152b;
+    --bg-sidebar: #031020;
+    --bg-card: #0a1f3c;
+    --bg-card-hover: #0f2c54;
+    --accent-primary: #00D9FF;
+    --accent-secondary: #38BDF8;
+    --color-success: #34D399;
+    --color-warning: #FBBF24;
+    --color-critical: #F87171;
+    --text-primary: #F0F9FF;
+    --text-secondary: #93C5FD;
+    --text-muted: #4772A3;
+    --border-color: #163B66;
+    --border-color-glow: rgba(0, 217, 255, 0.45);
+    --canvas-bg: #020b17;
+    --node-bg: #0a1f3c;
+    --node-border: #163B66;
+    --node-text: #F0F9FF;
+  }
+
+  [data-theme="crimson-red"] {
+    --bg-main: #0d0609;
+    --bg-secondary: #170b10;
+    --bg-sidebar: #10070b;
+    --bg-card: #200f17;
+    --bg-card-hover: #2e1521;
+    --accent-primary: #FF2E5B;
+    --accent-secondary: #FFA238;
+    --color-success: #32D583;
+    --color-warning: #FFA238;
+    --color-critical: #FF2E5B;
+    --text-primary: #FFF0F3;
+    --text-secondary: #D4A5B1;
+    --text-muted: #804D59;
+    --border-color: #401B27;
+    --border-color-glow: rgba(255, 46, 91, 0.45);
+    --canvas-bg: #0d0609;
+    --node-bg: #200f17;
+    --node-border: #401B27;
+    --node-text: #FFF0F3;
+  }
+
+  [data-theme="cyber-light"] {
+    --bg-main: #F1F5F9;
+    --bg-secondary: #E2E8F0;
+    --bg-sidebar: #FFFFFF;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F8FAFC;
+    --accent-primary: #6366F1;
+    --accent-secondary: #0284C7;
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-critical: #EF4444;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #64748B;
+    --border-color: #CBD5E1;
+    --border-color-glow: rgba(99, 102, 241, 0.35);
+    --canvas-bg: #F8FAFC;
+    --node-bg: #FFFFFF;
+    --node-border: #CBD5E1;
+    --node-text: #0F172A;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Dynamic cyber card styling */
+.cyber-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.cyber-card:hover {
+  border-color: var(--border-color-glow);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Print styling */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  aside, header, nav, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  .print-area {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .cyber-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Hide Next.js development badges/portals */
+nextjs-portal,
+[data-nextjs-toast],
+[data-next-badge],
+[data-nextjs-dev-tools-button] {
+  display: none !important;
+}
+
